@@ -1,22 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://we-ax.github.io</id>
-    <title>We_ax</title>
-    <updated>2019-10-05T15:15:24.838Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://we-ax.github.io"/>
-    <link rel="self" href="https://we-ax.github.io/atom.xml"/>
-    <subtitle>We_ax战队官方博客</subtitle>
-    <logo>https://we-ax.github.io/images/avatar.png</logo>
-    <icon>https://we-ax.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, We_ax</rights>
-    <entry>
-        <title type="html"><![CDATA[2019 TechWorld 信息安全挑战赛]]></title>
-        <id>https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai</id>
-        <link href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
-        </link>
-        <updated>2019-10-05T15:12:17.000Z</updated>
-        <content type="html"><![CDATA[<p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>2019 TechWorld 信息安全挑战赛 | We_ax</title>
+<meta name="description" content="We_ax战队官方博客">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570288518201">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://we-ax.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://we-ax.github.io">
+        <img src="https://we-ax.github.io/images/avatar.png?v=1570288518201" class="site-logo">
+        <h1 class="site-title">We_ax</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      We_ax战队官方博客
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://we-ax.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">2019 TechWorld 信息安全挑战赛</h2>
+            <div class="post-date">2019-10-05</div>
+            
+            <div class="post-content">
+              <p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>
 战队：We_ax</p>
 <h1 id="web">Web</h1>
 <h3 id="web1">Web1</h3>
@@ -336,6 +416,38 @@ for u in range(len(i)):
 <p>flag += chr(q[u]+i[u])</p>
 <p>print (flag)</p>
 <p>得ctfcoded20190616</p>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
