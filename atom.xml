@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://we-ax.github.io</id>
     <title>We_ax</title>
-    <updated>2019-10-05T15:31:20.530Z</updated>
+    <updated>2019-10-05T15:35:56.886Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://we-ax.github.io"/>
     <link rel="self" href="https://we-ax.github.io/atom.xml"/>
@@ -16,8 +16,12 @@
         <link href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
         </link>
         <updated>2019-10-05T15:12:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>
+战队：We_ax</p>
+]]></summary>
         <content type="html"><![CDATA[<p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>
 战队：We_ax</p>
+<!-- more -->
 <h1 id="web">Web</h1>
 <h3 id="web1">Web1</h3>
 <p>.DS_Store 目录信息泄漏<br>
