@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://we-ax.github.io</id>
     <title>We_ax</title>
-    <updated>2019-10-05T15:15:24.838Z</updated>
+    <updated>2019-10-05T15:31:20.530Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://we-ax.github.io"/>
     <link rel="self" href="https://we-ax.github.io/atom.xml"/>
@@ -26,9 +26,9 @@
 39.106.184.130:8084/CTF_Can_U_Tell_Me_The_Flag/ctf.jpg<br>
 图片的这个路径也有.DS_Store文件的，扫描一下可能有东西<br>
 git 有泄漏，据说是个假的flag<br>
-<img src="https://uploader.shimo.im/f/kktKohbbHI0r0qpl.png!thumbnail" alt="图片"><br>
+<img src="https://we-ax.github.io/post-images/1570288673832.png" alt=""><br>
 git log<br>
-<img src="https://uploader.shimo.im/f/KwOxfeqJ9V8rYgtg.png!thumbnail" alt="图片"></p>
+<img src="https://we-ax.github.io/post-images/1570288702283.png" alt=""></p>
 <h3 id=""></h3>
 <h3 id="web2">Web2</h3>
 <p>Gitlab，version很高，目前网络上找不到现成的漏洞，另寻他法，扫目录发现别人的号，进去看了下，发现root发表的仓库，可以找到源码</p>
@@ -144,7 +144,7 @@ def get_database():
 if __name__ == '__main__':
     get_database()
 </code></pre>
-<p><img src="https://uploader.shimo.im/f/vgNkLCrIyX4DzHKT.png!thumbnail" alt="图片"><br>
+<p><img src="https://we-ax.github.io/post-images/1570288750712.png" alt=""><br>
 截图时候的exp写错了一点，没打到32位，最后一位也是4<br>
 flag{deb7cb73f0ea2b2af2d1e3715fd12044}</p>
 <h3 id="web6">Web6</h3>
@@ -153,16 +153,16 @@ flag{sgwxsSesSD232se14sdSVSsx}</p>
 <h1 id="misc">Misc</h1>
 <h3 id="misc1">Misc1</h3>
 <p>把a换成1,空格换成0,得到<br>
-<img src="https://uploader.shimo.im/f/IwBzrGxELeU1osoE.png!thumbnail" alt="图片"><br>
+<img src="https://we-ax.github.io/post-images/1570288777270.png" alt=""><br>
 发现很有规律<br>
-<img src="https://uploader.shimo.im/f/KFXbFFkEllsEruTv.png!thumbnail" alt="图片"><br>
+<img src="https://we-ax.github.io/post-images/1570288803926.png" alt=""><br>
 得到<br>
 MFTVYYTWJYVVU3TKLJHEUWS5FNWSY2LCPA======<br>
 base32解密后得到ag\bvN+ZnjZNJZ]+m,ibx<br>
 移5位<br>
-<img src="https://uploader.shimo.im/f/J0S10SCv3QcTe8R4.png!thumbnail" alt="图片"></p>
+<img src="https://we-ax.github.io/post-images/1570288837015.png" alt=""></p>
 <h3 id="naruto">Naruto</h3>
-<figure data-type="image" tabindex="1"><img src="https://uploader.shimo.im/f/SO5UcpA3vFU9lgvY.png!thumbnail" alt="图片"></figure>
+<figure data-type="image" tabindex="1"><img src="https://we-ax.github.io/post-images/1570289029674.png" alt=""></figure>
 <pre><code>69 61 6D 70 61 73 73 30 72 64
 </code></pre>
 <p>转ASCII</p>
@@ -280,7 +280,7 @@ e=0x11<br>
 n=0x10000000000000000000000000000000000000000000000000000000000000001<br>
 经过加密后跟3对比.<br>
 写解密脚本<br>
-<img src="https://uploader.shimo.im/f/MvjmSNfKtPcWARCb.png!thumbnail" alt="图片"><br>
+<img src="https://we-ax.github.io/post-images/1570289344577.png" alt=""><br>
 最终得到<br>
 20147921867919287621000423135750575019160522385541100256929307093535644366653<br>
 即flag</p>
