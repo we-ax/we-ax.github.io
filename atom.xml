@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://we-ax.github.io</id>
     <title>We_ax</title>
-    <updated>2019-10-06T13:19:12.284Z</updated>
+    <updated>2019-10-06T13:22:32.178Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://we-ax.github.io"/>
     <link rel="self" href="https://we-ax.github.io/atom.xml"/>
@@ -16,10 +16,7 @@
         <link href="https://we-ax.github.io/post/wectf1-writeup">
         </link>
         <updated>2019-10-06T12:51:45.000Z</updated>
-        <content type="html"><![CDATA[<p>说明：题目要思路清晰，禁止脑洞。简单题目可以略多一点。主要考察同学们的基本功、进阶式的考察代码审计能力、脚本编写能力。<br>
-web方向 至少10道，其他方向，至少6道题。</p>
-<p>出题者，在每道题目后，写上自己的出题和解题思路、链接、flag。<br>
-Welcome to the first of WeCTF</p>
+        <content type="html"><![CDATA[<p>Welcome to the first of WeCTF</p>
 <h1 id="web">Web</h1>
 <p>Web题目中至少2道题考代码审计。</p>
 <h2 id="web签到">web签到</h2>
