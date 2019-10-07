@@ -7,7 +7,7 @@
 <title>
     Wectf1--WriteUp | We_ax
 </title>
-<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570415288084">
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570415985872">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -28,7 +28,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://we-ax.github.io">
-                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570415288084" alt="">
+                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570415985872" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -105,7 +105,7 @@
                             <time class="post-time">2019-10-06</time>
                             
                                 <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-success">
                             #writeup
                         </a>
                                 
@@ -900,9 +900,8 @@ io.interact()
 <h1 id="reverse">Reverse</h1>
 <h2 id="xor">xor</h2>
 <p>linux  for循环 xor</p>
-<p>没什么好说的</p>
+<p>没什么好说的,循环异或 1</p>
 <p>flag：wectf{x0r_s0_e4sy}</p>
-<p><a href="https://uploader.shimo.im/f/Obd3U8puLWc9wuaz">xor</a></p>
 <h2 id="cmp">cmp</h2>
 <p>windows系统<br>
 flag:flag{412accbb6e9ffbeef39e317d0862b9ab}</p>
@@ -1022,7 +1021,6 @@ print flag
 <h1 id="pwn">Pwn</h1>
 <h2 id="bof">BOF</h2>
 <p>变量覆盖</p>
-<p><a href="https://uploader.shimo.im/f/jJBB0KezvNEeUbpP">BOF</a></p>
 <p>源码：</p>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 #include&lt;stdlib.h&gt;
@@ -1053,8 +1051,7 @@ int main()
 <pre><code class="language-shell">gcc -fno-stack-protector BOF.c -o BOF
 </code></pre>
 <p>我关闭了栈保护，这个题有多解<br>
-<img src="https://we-ax.github.io/post-images/1570380608460.png" alt=""><br>
-<img src="file:///Users/mk/Desktop/abcdef/image-6.png" alt="image-6"></p>
+<img src="https://we-ax.github.io/post-images/1570380608460.png" alt=""></p>
 <p>ipt 和 root 相距 28</p>
 <pre><code class="language-python">from pwn import *
 
