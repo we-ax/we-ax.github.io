@@ -7,7 +7,7 @@
 <title>
     Wectf1--WriteUp | We_ax
 </title>
-<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570626319046">
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1603098179659">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://we-ax.github.io">
-                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570626319046" alt="">
+                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1603098179659" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -111,8 +111,8 @@
                         <div class="post-info">
                             <time class="post-time">2019-10-06</time>
                             
-                                <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
-                            i-tag-other_3">
+                                <a href="https://we-ax.github.io/tag/4REPgFG5c/" class="post-tag i-tag
+                            i-tag-error">
                             #writeup
                         </a>
                                 
@@ -200,7 +200,7 @@ if (isset($_GET['name']) and isset($_GET['username']) and isset($_POST['pas
 } 
 ?&gt; 
 </code></pre>
-<p><img src="https://we-ax.github.io/post-images/1570378565328.png" alt=""><br>
+<p><img src="https://we-ax.github.io/post-images/1570378565328.png" alt="" loading="lazy"><br>
 wectf{e2e123acef456789d132f456c13}</p>
 <h2 id="high01">high01</h2>
 <p><a href="http://119.23.236.68:63006/high/index.php">http://119.23.236.68:63006/high/index.php</a></p>
@@ -351,7 +351,7 @@ echo urlencode(serialize($b)).&quot;&lt;br /&gt;&quot;;      
 <p>生成payload：</p>
 <pre><code>O%3A4%3A%22O00O%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A4%3A%22Call%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A6%3A%22Func_t%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A6%3A%22Func_m%22%3A2%3A%7Bs%3A6%3A%22value1%22%3BO%3A3%3A%22Ina%22%3A1%3A%7Bs%3A5%3A%22value%22%3BO%3A7%3A%22GetFlag%22%3A0%3A%7B%7D%7Ds%3A6%3A%22value2%22%3BN%3B%7D%7D%7D%7D
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://we-ax.github.io/post-images/1570378722636.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://we-ax.github.io/post-images/1570378722636.png" alt="" loading="lazy"></figure>
 <p>flag{unserialize_php_O00O}</p>
 <h1 id="misc">Misc</h1>
 <h2 id="rot13签到题">ROT13（签到题）</h2>
@@ -384,7 +384,7 @@ flag : wectf{1_4m_fl4g}</p>
 <p><a href="https://uploader.shimo.im/f/1nduCzbrEskIqwBz.pcap">goodluck.pcap</a></p>
 <p>我通过 nc 把 flag 从 192.168.229.1 发送到 192.168.229.128<br>
 进去跟踪 tcp 流就能看到flag<br>
-<img src="https://we-ax.github.io/post-images/1570378962015.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570378962015.png" alt="" loading="lazy"><br>
 flag : wectf{4maz1n9_pcap}<br>
 .........</p>
 <h2 id="这是个啥东西">这是个啥东西</h2>
@@ -477,23 +477,23 @@ whoami.pyc<br>
 </code></pre>
 <h2 id="钛合金狗眼">钛合金狗眼</h2>
 <p>拿到图片首先binwalk跑一下，发现图片之后，一句foremost直接分离<br>
-<img src="https://we-ax.github.io/post-images/1570379014801.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570379014801.png" alt="" loading="lazy"><br>
 放大第二张图片之后发现整齐的噪点，可以推测通道里面藏着信息<br>
 百度搜索关键词： CTF 两张图片，得到某次比赛的wp<br>
 <a href="http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html">http://blog.sina.com.cn/s/blog_9cd8465f0102v6ok.html</a></p>
 <p>按照网上的答案，写脚本进行比较：<br>
-<img src="https://we-ax.github.io/post-images/1570379204746.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570379204746.png" alt="" loading="lazy"></p>
 <p>发现与网上的题目差不多，比赛那题是red通道隐藏信息，这题是blue通道隐藏信息。<br>
 再继续写代码把blue通道里面隐藏的信息提取出来<br>
-<img src="https://we-ax.github.io/post-images/1570379743874.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570379743874.png" alt="" loading="lazy"></p>
 <p>得到一串长度为2809的二进制数样子的字符串，即53<em>53<br>
 接下来创建一个53</em>53像素的图片， 将1和0转化为黑色像素点和白色像素点<br>
-<img src="https://we-ax.github.io/post-images/1570379794667.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570379840821.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570379794667.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570379840821.png" alt="" loading="lazy"></p>
 <p>得到一张二维码图片，但是并不能扫出来<br>
 再另外建立一张同样大小的图片，然后将该图片行列转置，保存在新图中<br>
-<img src="https://we-ax.github.io/post-images/1570380119689.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570380150625.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380119689.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570380150625.png" alt="" loading="lazy"></p>
 <p>用手机扫描转置后的图片，得到flag<br>
 flag{8fgd2svxc6zbikyt4}</p>
 <h2 id=""></h2>
@@ -841,7 +841,7 @@ for i in range(10):
             print flag
 </code></pre>
 <p>CBC 加密就是把上一个块的密文当成下一个块的 IV<br>
-<img src="https://we-ax.github.io/post-images/1570371212584.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570371212584.png" alt="" loading="lazy"></p>
 <p>代码中</p>
 <pre><code class="language-python">if m_rcv.split(&quot;admin=&quot;)[1][0]=='1':
   print flag
@@ -913,8 +913,8 @@ io.interact()
 <p>windows系统<br>
 flag:flag{412accbb6e9ffbeef39e317d0862b9ab}</p>
 <p>思路：flag分成几段比较<br>
-<img src="https://we-ax.github.io/post-images/1570380245117.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570380256343.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380245117.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570380256343.png" alt="" loading="lazy"></p>
 <h2 id="assembly">assembly</h2>
 <p>题目</p>
 <pre><code class="language-assembly">push    rbp
@@ -965,23 +965,23 @@ print flags
 flag:flag{787912e6b3b4c32f651e6b914382e3a9}<br>
 思路：<br>
 base64加密或对比，进入base64函数后会经过一个循环改变初始table的值<br>
-<img src="https://we-ax.github.io/post-images/1570380288712.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570380303752.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380288712.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570380303752.png" alt="" loading="lazy"></p>
 <h2 id="king">king</h2>
 <p>linux系统<br>
 flag:wectf{2d6915e15c7bdffe2b470c1648a79717}<br>
 思路:<br>
 里边就是一个凯撒加密，移的位数为7<br>
-<img src="https://we-ax.github.io/post-images/1570380350901.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570380363668.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380350901.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570380363668.png" alt="" loading="lazy"></p>
 <p><a href="https://uploader.shimo.im/f/3ywxmXJQXsEKUP0V">k</a></p>
 <p>.........</p>
 <h2 id="网">网</h2>
 <p>.Net程序调试<br>
 先用de4dot清理程序<br>
 之后使用dnSpy在程序入口点下断点，单步运行就能在下面的变量框看见flag<br>
-<img src="https://we-ax.github.io/post-images/1570380411889.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570380421033.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380411889.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570380421033.png" alt="" loading="lazy"></p>
 <p>wectf{54sa58A92w6sa26a5Ssa88x9aw8wa56xW}<br>
 <a href="https://uploader.shimo.im/f/2GEXKetHwIYbSwHV.exe">19abe65fdc1875edabc521e215693edf.exe</a></p>
 <h2 id="sign">sign</h2>
@@ -989,15 +989,15 @@ flag:wectf{2d6915e15c7bdffe2b470c1648a79717}<br>
 flag:wectf{welc0mE_To_Csharp}<br>
 思路:<br>
 直接调用标准aes加密，函数名字也已经给出。<br>
-<img src="https://we-ax.github.io/post-images/1570380474741.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380474741.png" alt="" loading="lazy"></p>
 <p>可以直接网上解密得到flag<br>
-<img src="https://we-ax.github.io/post-images/1570380484764.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570380502375.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380484764.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570380502375.png" alt="" loading="lazy"></p>
 <p><a href="https://uploader.shimo.im/f/vbfCsWnapvkhRpfj.exe">sign_in.exe</a></p>
 <h2 id="emmm">emmm</h2>
 <p>flag:flag{a7b8d813f9d9a9b9c9ee4}<br>
 思路:里边是MersenneTwister随机数生成算法，输入的字符串每一个都会被当做seed并生成对应的随机数，比较。<br>
-<img src="https://we-ax.github.io/post-images/1570380525657.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570380525657.png" alt="" loading="lazy"><br>
 读取出数据，爆破即可。</p>
 <pre><code class="language-python">en = [
 0x9901A900,0x3BCDF063,
@@ -1023,7 +1023,7 @@ for q in en:
             break
 print flag
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://we-ax.github.io/post-images/1570380563314.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://we-ax.github.io/post-images/1570380563314.png" alt="" loading="lazy"></figure>
 <p><a href="https://uploader.shimo.im/f/rIvXPd39gfYhjA6Q">emmm</a></p>
 <h1 id="pwn">Pwn</h1>
 <h2 id="bof">BOF</h2>
@@ -1058,7 +1058,7 @@ int main()
 <pre><code class="language-shell">gcc -fno-stack-protector BOF.c -o BOF
 </code></pre>
 <p>我关闭了栈保护，这个题有多解<br>
-<img src="https://we-ax.github.io/post-images/1570380608460.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570380608460.png" alt="" loading="lazy"></p>
 <p>ipt 和 root 相距 28</p>
 <pre><code class="language-python">from pwn import *
 
@@ -1345,11 +1345,11 @@ def create():
 create()
 </code></pre>
 <p>对dump出的文简单分析恢复其main函数<br>
-<img src="https://we-ax.github.io/post-images/1570415093161.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570415100422.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570415264783.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570415163724.png" alt=""><br>
-<img src="https://we-ax.github.io/post-images/1570415176413.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570415093161.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570415100422.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570415264783.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570415163724.png" alt="" loading="lazy"><br>
+<img src="https://we-ax.github.io/post-images/1570415176413.png" alt="" loading="lazy"></p>
 <p>确定到got起始地址为0x804a000<br>
 然后leak确定libc版本与libc地址<br>
 改printf got表为system地址即可<br>
@@ -1419,7 +1419,7 @@ malloc(1024);
 }
 </code></pre>
 <p>重点在于如何将代码段的地址写到返回地址,发现返回地址最后来源于[ecx-4],所以构造[ecx-4]=dosomething地址即可<br>
-<img src="https://we-ax.github.io/post-images/1570415054001.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570415054001.png" alt="" loading="lazy"></p>
 <p>exp:</p>
 <pre><code class="language-python">from pwn import *
 
@@ -1437,12 +1437,12 @@ p.sendline(payload)
 p.interactive()
 </code></pre>
 <h1 id="最终排名">最终排名</h1>
-<figure data-type="image" tabindex="3"><img src="https://we-ax.github.io/post-images/1570410154021.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://we-ax.github.io/post-images/1570410154021.png" alt="" loading="lazy"></figure>
 <h1 id="题目">题目：</h1>
 <p>https://yunpan.360.cn/surl_yumR7sIvZut</p>
 <h1 id="选手wp">选手wp</h1>
 <p>各位师傅的 wp：https://yunpan.360.cn/surl_yumRad79FAV<br>
-<img src="https://we-ax.github.io/post-images/1570410357223.PNG" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570410357223.PNG" alt="" loading="lazy"></p>
 
                                 </div>
                     </article>
@@ -1450,7 +1450,7 @@ p.interactive()
                     
                         <div class="next-post">
                             <div class="next">下一篇</div>
-                            <a href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
+                            <a href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai/">
                                 <h3 class="post-title">
                                     2019 TechWorld 信息安全挑战赛
                                 </h3>

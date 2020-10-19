@@ -2,17 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://we-ax.github.io</id>
     <title>We_ax</title>
-    <updated>2019-10-09T13:05:21.637Z</updated>
+    <updated>2020-10-19T09:03:04.965Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://we-ax.github.io"/>
     <link rel="self" href="https://we-ax.github.io/atom.xml"/>
     <logo>https://we-ax.github.io/images/avatar.png</logo>
     <icon>https://we-ax.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, We_ax</rights>
+    <rights>All rights reserved 2020, We_ax</rights>
     <entry>
         <title type="html"><![CDATA[Wectf1--WriteUp]]></title>
-        <id>https://we-ax.github.io/post/wectf1-writeup</id>
-        <link href="https://we-ax.github.io/post/wectf1-writeup">
+        <id>https://we-ax.github.io/post/wectf1-writeup/</id>
+        <link href="https://we-ax.github.io/post/wectf1-writeup/">
         </link>
         <updated>2019-10-06T12:51:45.000Z</updated>
         <summary type="html"><![CDATA[<p>Welcome to the first of WeCTF</p>
@@ -22,8 +22,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[2019 TechWorld 信息安全挑战赛]]></title>
-        <id>https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai</id>
-        <link href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai">
+        <id>https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai/</id>
+        <link href="https://we-ax.github.io/post/2019-techworld-xin-xi-an-quan-tiao-zhan-sai/">
         </link>
         <updated>2019-10-05T15:12:17.000Z</updated>
         <summary type="html"><![CDATA[<p>比赛名称：<strong>2019 TechWorld 信息安全挑战赛</strong><br>

@@ -7,7 +7,7 @@
 <title>
     2019 TechWorld 信息安全挑战赛 | We_ax
 </title>
-<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1570626319046">
+<link rel="shortcut icon" href="https://we-ax.github.io/favicon.ico?v=1603098179659">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -35,7 +35,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://we-ax.github.io">
-                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1570626319046" alt="">
+                <img class="avatar" src="https://we-ax.github.io/images/avatar.png?v=1603098179659" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -111,8 +111,8 @@
                         <div class="post-info">
                             <time class="post-time">2019-10-05</time>
                             
-                                <a href="https://we-ax.github.io/tag/4REPgFG5c" class="post-tag i-tag
-                            i-tag-other_4">
+                                <a href="https://we-ax.github.io/tag/4REPgFG5c/" class="post-tag i-tag
+                            i-tag-primary">
                             #writeup
                         </a>
                                 
@@ -132,9 +132,9 @@
 39.106.184.130:8084/CTF_Can_U_Tell_Me_The_Flag/ctf.jpg<br>
 图片的这个路径也有.DS_Store文件的，扫描一下可能有东西<br>
 git 有泄漏，据说是个假的flag<br>
-<img src="https://we-ax.github.io/post-images/1570288673832.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570288673832.png" alt="" loading="lazy"><br>
 git log<br>
-<img src="https://we-ax.github.io/post-images/1570288702283.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570288702283.png" alt="" loading="lazy"></p>
 <h3 id=""></h3>
 <h3 id="web2">Web2</h3>
 <p>Gitlab，version很高，目前网络上找不到现成的漏洞，另寻他法，扫目录发现别人的号，进去看了下，发现root发表的仓库，可以找到源码</p>
@@ -250,7 +250,7 @@ def get_database():
 if __name__ == '__main__':
     get_database()
 </code></pre>
-<p><img src="https://we-ax.github.io/post-images/1570288750712.png" alt=""><br>
+<p><img src="https://we-ax.github.io/post-images/1570288750712.png" alt="" loading="lazy"><br>
 截图时候的exp写错了一点，没打到32位，最后一位也是4<br>
 flag{deb7cb73f0ea2b2af2d1e3715fd12044}</p>
 <h3 id="web6">Web6</h3>
@@ -259,16 +259,16 @@ flag{sgwxsSesSD232se14sdSVSsx}</p>
 <h1 id="misc">Misc</h1>
 <h3 id="misc1">Misc1</h3>
 <p>把a换成1,空格换成0,得到<br>
-<img src="https://we-ax.github.io/post-images/1570288777270.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570288777270.png" alt="" loading="lazy"><br>
 发现很有规律<br>
-<img src="https://we-ax.github.io/post-images/1570288803926.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570288803926.png" alt="" loading="lazy"><br>
 得到<br>
 MFTVYYTWJYVVU3TKLJHEUWS5FNWSY2LCPA======<br>
 base32解密后得到ag\bvN+ZnjZNJZ]+m,ibx<br>
 移5位<br>
-<img src="https://we-ax.github.io/post-images/1570288837015.png" alt=""></p>
+<img src="https://we-ax.github.io/post-images/1570288837015.png" alt="" loading="lazy"></p>
 <h3 id="naruto">Naruto</h3>
-<figure data-type="image" tabindex="1"><img src="https://we-ax.github.io/post-images/1570289029674.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://we-ax.github.io/post-images/1570289029674.png" alt="" loading="lazy"></figure>
 <pre><code>69 61 6D 70 61 73 73 30 72 64
 </code></pre>
 <p>转ASCII</p>
@@ -386,7 +386,7 @@ e=0x11<br>
 n=0x10000000000000000000000000000000000000000000000000000000000000001<br>
 经过加密后跟3对比.<br>
 写解密脚本<br>
-<img src="https://we-ax.github.io/post-images/1570289344577.png" alt=""><br>
+<img src="https://we-ax.github.io/post-images/1570289344577.png" alt="" loading="lazy"><br>
 最终得到<br>
 20147921867919287621000423135750575019160522385541100256929307093535644366653<br>
 即flag</p>
